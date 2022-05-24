@@ -194,8 +194,9 @@ export class MediaStreamDirective
     config: MediaStreamConstraints
   ): Observable<MediaStream> {
     return from(
-      this.mediaDevices.getUserMedia({
-        ...{ video: true, audio: false }, // Default config
+      this.mediaDevices.getUserMedia({    
+        ...{ video: true, audio: true }, // Allow Audio
+        //...{ video: true, audio: false }, // Default config
         ...config,
       })
     );
